@@ -1,0 +1,54 @@
+---
+layout: default
+title: 1scream &mdash; Amusement Industry Websites
+description: We love the Amusement Industry and building beautiful, useful websites.
+keywords: amusement park website, theme park website, roller coaster website, coaster website, disney website, six flags website, cedar fair website, amusement park, theme park, disney, six flags, cedar fair, roller coaster, coaster, roller coaster tycoon, nolimits, rctlounge, park thoughts, can they ride
+---
+
+        <header id="header" class="section">
+            <h1>Hi, we&rsquo;re 1scream.</h1>
+            <h2>We love the Amusement Industry and building beautiful, useful websites.</h2>
+        </header>
+
+        <section id="working-on" class="section">
+            <h3>Here&rsquo;s what we work on.</h3>
+            <p class="sub">Great websites don&rsquo;t happen overnight. We strive to make all of our websites beautiful, unique, and useful.</p>
+
+            <ul class="properties">
+                {% for property in site.data.properties %}
+                <li>
+                    <h4><a href="{{ property.url }}" target="_blank">{{ property.name }}</a></h4>
+                    <p>{{ property.description }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="us" class="section">
+            <h4><a href="http://youtu.be/phOW-CZJWT0?t=13s" target="_blank">It takes two to make a thing go right.</a></h4>
+            {% for guy in site.data.team %}
+            {% assign guy_first_name = guy.name || truncatewords: 1, '' %}
+            <div class="guy {{ guy_first_name || downcase }}">
+                <div data-picture data-alt="{{ guy_first_name }}">
+                    <div data-src="/img/{{ guy_first_name || downcase }}.jpg"></div>
+                    <div data-src="/img/{{ guy_first_name || downcase }}@2x.jpg" data-media="(-webkit-min-device-pixel-ratio: 1.5),
+       (min--moz-device-pixel-ratio: 1.5),
+       (-o-min-device-pixel-ratio: 3/2),
+       (min-device-pixel-ratio: 1.5),
+       (min-resolution: 1.5dppx)"></div>
+                    <noscript>
+                        <img src="/img/{{ guy_first_name || downcase }}.jpg" alt="{{ guy_first_name }}">
+                    </noscript>
+                </div>
+                <div class="name"><a href="mailto:{{ guy.email }}" title="Email {{ guy_first_name }}">{{ guy.name }}</a></div>
+                <p>{{ guy.description }}</p>
+                {% include twitter_button.html handle=guy.twitter %}
+            </div>
+            {% endfor %}
+        </section>
+
+        <section id="end" class="section">
+            <h4>Let&rsquo;s stay in touch.</h4>
+            <p>There's some big things ahead in our future. Stay up to date with what we're doing by <a href="https://twitter.com/1scream" target="_blank">following us on Twitter</a>.</p>
+            {% include twitter_button.html handle="1scream" button_size="large" %}
+        </section>
