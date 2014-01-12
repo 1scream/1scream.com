@@ -281,6 +281,9 @@ h1, h2, h3, h4 {
 	}
 	#working-on .properties h4 {
 		width: 100%;
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
 		text-align: center;
 	}
 	#working-on .properties p {
