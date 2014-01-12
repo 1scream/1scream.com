@@ -323,7 +323,7 @@ h1, h2, h3, h4 {
 		display: block;
 		line-height: inherit;
 		background-position: center 0;
-		margin: 40px 0 0 0;
+		padding: 40px 0 0 0;
 		text-align: center;
 		font-size: .9em;
 	}
